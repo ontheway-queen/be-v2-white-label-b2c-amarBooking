@@ -1,11 +1,14 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
 import { getSiteInfo } from '@/lib/APIs/config-api';
-import { Apple, Smartphone } from 'lucide-react';
+import { IoLogoApple } from 'react-icons/io5';
+import { BiLogoPlayStore } from 'react-icons/bi';
 
 const AppDownload = async () => {
   const { data } = await getSiteInfo();
   const site_data = data?.site_data;
+  // console.log(site_data);
 
   return (
     <section className='min-h-screen bg-background py-16 px-4'>
@@ -23,7 +26,7 @@ const AppDownload = async () => {
           <Card className='hover:shadow-lg transition-shadow max-w-[300px]'>
             <CardHeader>
               <CardTitle className='flex items-center gap-2'>
-                <Apple className='w-6 h-6' /> iOS App
+                <IoLogoApple className='w-6 h-6' /> iOS App
               </CardTitle>
             </CardHeader>
             <CardContent className='space-y-4'>
@@ -32,7 +35,7 @@ const AppDownload = async () => {
               </p>
               <Button asChild className='w-full' variant='default'>
                 <a href={site_data?.ios_app_link} target='_blank' rel='noopener noreferrer'>
-                  Download on iOS
+                  <IoLogoApple className='w-8 h-8' /> Download on iOS
                 </a>
               </Button>
             </CardContent>
@@ -41,7 +44,7 @@ const AppDownload = async () => {
           <Card className='hover:shadow-lg transition-shadow max-w-[300px]'>
             <CardHeader>
               <CardTitle className='flex items-center gap-2'>
-                <Smartphone className='w-6 h-6' /> Android App
+                <BiLogoPlayStore className='w-6 h-6' /> Android App
               </CardTitle>
             </CardHeader>
             <CardContent className='space-y-4'>
@@ -50,7 +53,7 @@ const AppDownload = async () => {
               </p>
               <Button asChild className='w-full' variant='secondary'>
                 <a href={site_data?.android_app_link} target='_blank' rel='noopener noreferrer'>
-                  Get it on Android
+                  <BiLogoPlayStore className='w-8 h-8' /> Get it on Android
                 </a>
               </Button>
             </CardContent>
