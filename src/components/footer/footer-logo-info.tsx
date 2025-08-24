@@ -17,7 +17,7 @@ const FooterLogoInfo = async (props: Props) => {
           alt={siteData?.site_name || 'Logo'}
           width={50}
           height={55}
-          className=' object-cover'
+          className=' object-contain bg-white'
           priority
           sizes='auto'
         />

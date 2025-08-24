@@ -47,7 +47,9 @@ export const FlightCard = memo(({ item, searchId }: FlightCardProps) => {
     <Accordion
       type='single'
       collapsible
-      className={cn('bg-background rounded-lg transition-shadow duration-300 mb-4 overflow-hidden')}
+      className={cn(
+        'bg-background shadow border rounded-lg transition-shadow duration-300 mb-4 overflow-hidden',
+      )}
     >
       <AccordionItem value='item-1'>
         <div className='md:grid md:grid-cols-12 flex flex-col'>

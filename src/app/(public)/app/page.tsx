@@ -1,10 +1,12 @@
-'use client';
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { getSiteInfo } from '@/lib/APIs/config-api';
 import { Apple, Smartphone } from 'lucide-react';
 
-export default function OurAppsPage() {
+const AppDownload = async () => {
+  const { data } = await getSiteInfo();
+  const site_data = data?.site_data;
+
   return (
     <section className='min-h-screen bg-background py-16 px-4'>
       <div className='container mx-auto text-center'>
@@ -16,9 +18,9 @@ export default function OurAppsPage() {
         </p>
 
         {/* Cards */}
-        <div className='grid gap-8 md:grid-cols-3 max-w-6xl mx-auto'>
+        <div className='flex flex-wrap justify-center gap-4 mx-auto'>
           {/* iOS Card */}
-          <Card className='hover:shadow-lg transition-shadow'>
+          <Card className='hover:shadow-lg transition-shadow max-w-[300px]'>
             <CardHeader>
               <CardTitle className='flex items-center gap-2'>
                 <Apple className='w-6 h-6' /> iOS App
@@ -29,26 +31,14 @@ export default function OurAppsPage() {
                 Download our app from the Apple App Store and start your journey today.
               </p>
               <Button asChild className='w-full' variant='default'>
-                <a href='https://apps.apple.com' target='_blank' rel='noopener noreferrer'>
+                <a href={site_data?.ios_app_link} target='_blank' rel='noopener noreferrer'>
                   Download on iOS
                 </a>
               </Button>
             </CardContent>
           </Card>
-
-          {/* App Mockup (Center) */}
-          {/* <div className='hidden md:flex justify-center items-center'>
-            <Image
-              src='/images/app-mockup.png' // Place your mockup in public/images
-              alt='App Mockup'
-              width={250}
-              height={500}
-              className='rounded-2xl shadow-xl'
-            />
-          </div> */}
-
           {/* Android Card */}
-          <Card className='hover:shadow-lg transition-shadow'>
+          <Card className='hover:shadow-lg transition-shadow max-w-[300px]'>
             <CardHeader>
               <CardTitle className='flex items-center gap-2'>
                 <Smartphone className='w-6 h-6' /> Android App
@@ -59,7 +49,7 @@ export default function OurAppsPage() {
                 Get our Android app from Google Play and enjoy smooth booking anytime.
               </p>
               <Button asChild className='w-full' variant='secondary'>
-                <a href='https://play.google.com' target='_blank' rel='noopener noreferrer'>
+                <a href={site_data?.android_app_link} target='_blank' rel='noopener noreferrer'>
                   Get it on Android
                 </a>
               </Button>
@@ -69,4 +59,6 @@ export default function OurAppsPage() {
       </div>
     </section>
   );
-}
+};
+
+export default AppDownload;
