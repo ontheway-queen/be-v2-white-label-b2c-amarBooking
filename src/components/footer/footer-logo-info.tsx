@@ -11,19 +11,18 @@ const FooterLogoInfo = async (props: Props) => {
   return (
     <div className='flex flex-col gap-4'>
       {/* Logo and Site Name */}
-      <div className='flex items-center gap-3 bg-white p-2 rounded-lg'>
+      <div className='bg-white w-fit p-2'>
         <Image
           src={getImageLink(siteData?.main_logo)}
           alt={siteData?.site_name || 'Logo'}
           width={50}
           height={55}
-          className='object-cover'
+          className=' object-cover'
           priority
           sizes='auto'
         />
-        <h4 className='text-xl font-semibold text-secondary'>{siteData?.site_name}</h4>
       </div>
-
+      <h4 className='text-xl font-semibold'>{siteData?.site_name}</h4>
       {/* Emails */}
       {siteData?.emails?.length && (
         <div className='flex flex-col gap-1'>
