@@ -1,0 +1,285 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+body {
+  font-family: var(--font-sans), sans-serif;
+}
+
+:root {
+  --background: oklch(0.9897 0.0051 247.8755);
+  --foreground: oklch(0.1798 0.0104 248.4056);
+  --card: oklch(0.9850 0.0010 106.4230);
+  --card-foreground: oklch(0.1798 0.0104 248.4056);
+  --popover: var(--background);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.6533 0.1899 40.5277);
+  --primary-foreground: oklch(1.0000 0 0);
+  --secondary: oklch(0.5371 0.1315 251.6990);
+  --secondary-foreground: oklch(1.0000 0 0);
+  --muted: oklch(0.9850 0.0010 106.4230);
+  --muted-foreground: oklch(0.4506 0.0292 259.7731);
+  --accent: oklch(0.9540 0.0380 75.1640);
+  --accent-foreground: oklch(0.2210 0.0497 290.5814);
+  --destructive: oklch(0.5675 0.2329 29.2339);
+  --destructive-foreground: oklch(0.9791 0 0);
+  --border: oklch(0.8400 0.0150 260);
+  --input: oklch(0.8600 0.0150 260);
+  --ring: oklch(0.5997 0.1495 259.7518);
+  --chart-1: oklch(0.5403 0.1789 255.1645);
+  --chart-2: oklch(0.5850 0.1093 223.3495);
+  --chart-3: oklch(0.5204 0.1502 289.9320);
+  --chart-4: oklch(0.5544 0.0951 207.0804);
+  --chart-5: oklch(0.5193 0.2000 319.9131);
+  --sidebar: oklch(0.9747 0.0051 247.8765);
+  --sidebar-foreground: oklch(0.1798 0.0104 248.4056);
+  --sidebar-primary: oklch(0.5403 0.1789 255.1645);
+  --sidebar-primary-foreground: oklch(0.9791 0 0);
+  --sidebar-accent: oklch(0.8807 0.0296 264.4119);
+  --sidebar-accent-foreground: oklch(0.2601 0.0796 264.5441);
+  --sidebar-border: oklch(0.8405 0.0154 260.7279);
+  --sidebar-ring: oklch(0.5997 0.1495 259.7518);
+  --font-sans: Open Sans, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 0.525rem;
+  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+  --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
+  --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
+  --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
+  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: oklch(0.1316 0.0096 242.7428);
+  --foreground: oklch(0.9791 0 0);
+  --card: oklch(0.1608 0.0091 240.5878);
+  --card-foreground: oklch(0.9791 0 0);
+  --popover: oklch(0.1608 0.0091 240.5878);
+  --popover-foreground: oklch(0.9791 0 0);
+  --primary: oklch(0.6457 0.1932 254.2120);
+  --primary-foreground: oklch(0.1205 0.0097 252.8876);
+  --secondary: oklch(0.4841 0.0912 224.4069);
+  --secondary-foreground: oklch(0.9791 0 0);
+  --muted: oklch(0.2417 0.0194 258.3564);
+  --muted-foreground: oklch(0.7000 0.0305 261.4433);
+  --accent: oklch(0.3995 0.1296 290.0717);
+  --accent-foreground: oklch(0.9791 0 0);
+  --destructive: oklch(0.6280 0.2577 29.2339);
+  --destructive-foreground: oklch(0.9791 0 0);
+  --border: oklch(0.1993 0.0111 260.6610);
+  --input: oklch(0.2510 0.0105 260.6945);
+  --ring: oklch(0.5990 0.1798 260.0649);
+  --chart-1: oklch(0.6457 0.1932 254.2120);
+  --chart-2: oklch(0.6790 0.1228 219.0022);
+  --chart-3: oklch(0.6198 0.1706 289.9398);
+  --chart-4: oklch(0.6385 0.1092 205.8948);
+  --chart-5: oklch(0.6209 0.2099 319.8682);
+  --sidebar: oklch(0.1608 0.0091 240.5878);
+  --sidebar-foreground: oklch(0.9791 0 0);
+  --sidebar-primary: oklch(0.6457 0.1932 254.2120);
+  --sidebar-primary-foreground: oklch(0.1205 0.0097 252.8876);
+  --sidebar-accent: oklch(0.4505 0.1305 265.0833);
+  --sidebar-accent-foreground: oklch(0.9791 0 0);
+  --sidebar-border: oklch(0.3002 0.0100 260.7101);
+  --sidebar-ring: oklch(0.5990 0.1798 260.0649);
+  --font-sans: Open Sans, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 1.3rem;
+  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+  --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
+  --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
+  --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
+  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Define container styles directly in CSS */
+@layer components {
+  /* .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--container-max-width);
+
+  } */
+}
+
+.container {
+  @apply px-4 xl:px-6 mx-auto max-w-[1200px];
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* If using global styles (e.g., in styles/globals.css) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.day-outside {
+  visibility: hidden;
+  background-color: transparent;
+}
+
+.print-hide {
+  display: none;
+}
+
+@media print {
+  .print-flex {
+    display: flex;
+  }
+
+  .page-break {
+    page-break-after: always;
+  }
+
+  .no-print {
+    display: none;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* @page {
+    size: auto;
+
+    @bottom-right {
+      content: 'Page ' counter(page);
+      font-style: italic;
+    }
+
+
+  } */
+}
+
+.contact-header {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.tourism-header {
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.footer-header {
+  background-image: url('/photos/bottom-shape.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

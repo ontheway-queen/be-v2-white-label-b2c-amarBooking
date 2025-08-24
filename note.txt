@@ -1,0 +1,2 @@
+       className='object-cover transition-opacity opacity-0 duration-[2s] group-hover:scale-105'
+                    onLoadingComplete={(image) => image.classList.remove('opacity-0')}
