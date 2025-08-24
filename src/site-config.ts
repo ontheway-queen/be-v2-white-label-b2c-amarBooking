@@ -4,7 +4,7 @@ export const SITE_INFO = {
   token: agency_token,
   primaryColor: 'rgb(235, 92, 29)',
   primaryColor_light: 'rgb(235, 92, 29, 0.2)',
-  url: 'ota.amartravels.com.bd',
+  url: 'https://amarbooking.com/',
   url_name: 'amarbooking.com',
 
   // FLIGHT _________________
