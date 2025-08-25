@@ -29,7 +29,6 @@ const NewsLetter = () => {
     formState: { errors, isValid },
   } = useForm<EmailFormData>({
     resolver: zodResolver(emailSchema),
-    mode: 'onChange',
   });
 
   const onSubmit = (data: EmailFormData) => {

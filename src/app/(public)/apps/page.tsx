@@ -1,9 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 import { getSiteInfo } from '@/lib/APIs/config-api';
-import { IoLogoApple } from 'react-icons/io5';
 import { BiLogoPlayStore } from 'react-icons/bi';
+import { IoLogoApple } from 'react-icons/io5';
 
 const AppDownload = async () => {
   const { data } = await getSiteInfo();

@@ -11,6 +11,7 @@ export const API_ENDPOINTS = {
   PROFILE: 'agent-b2c/profile',
   CHANGE_PASSWORD: 'agent-b2c/profile/change-password',
   LOGOUT: 'logout',
+  EMAIL_SUBSCRIPTION: 'agent-b2c/email-subscriber',
 
   // SELECT____________
   AIRPORT_SEARCH: 'public/common/airport',

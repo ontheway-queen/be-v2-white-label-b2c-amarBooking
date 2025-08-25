@@ -2,6 +2,7 @@ import AppDownload from '@/app/(public)/(home)/_component/app-download/app-downl
 import AppDownloadLoading from '@/app/(public)/(home)/_component/app-download/app-download-loading';
 import { Features } from '@/app/(public)/(home)/_component/Features';
 import HeroWrapper from '@/app/(public)/(home)/_component/hero/hero';
+import HotDeals from '@/app/(public)/(home)/_component/hot-deals/hot-deals';
 import NewsLetter from '@/app/(public)/(home)/_component/news-letter';
 import PopularDestination from '@/app/(public)/(home)/_component/popular-destination/popular-destination';
 import PopularDestinationsSkeleton from '@/app/(public)/(home)/_component/popular-destination/popular-destination-loading';
@@ -42,7 +43,9 @@ const HotelsPage = () => {
   return (
     <>
       <HeroWrapper defaultValue='HOTEL' />
-
+      <Suspense fallback={''}>
+        <HotDeals />
+      </Suspense>
       <Suspense fallback={<PopularDestinationsSkeleton />}>
         <PopularDestination />
       </Suspense>

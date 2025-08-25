@@ -211,7 +211,7 @@ export const CommonAPI = baseApi.injectEndpoints({
     subsEmail: builder.mutation<HTTPResponse<void>, { email?: string }>({
       query: (body) => {
         return {
-          url: `${API_ENDPOINTS.PROFILE}`,
+          url: `${API_ENDPOINTS.EMAIL_SUBSCRIPTION}`,
           method: 'POST',
           body: body,
         };
