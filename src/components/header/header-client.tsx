@@ -3,10 +3,9 @@
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { useGetProfileQuery } from '@/lib/APIs/common-api';
 import { getImageLink } from '@/lib/helper';
-import { dismissNotice } from '@/lib/redux/slice/noticeSlice';
-import { useAppDispatch, useAppSelector } from '@/lib/redux/store';
+import { useAppDispatch } from '@/lib/redux/store';
 import { cn } from '@/lib/utils';
-import { ChevronDown, LogOut, Settings, User, X } from 'lucide-react';
+import { ChevronDown, LogOut, User } from 'lucide-react';
 import { signOut, useSession } from 'next-auth/react';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
@@ -32,7 +31,7 @@ export default function HeaderClient({ siteLogo, siteName, notice }: IProps) {
   const { data } = useGetProfileQuery({}, { skip: session.status !== 'authenticated' });
 
   const dispatch = useAppDispatch();
-  const dismissed = useAppSelector((state) => state.notice.dismissed);
+  // const dismissed = useAppSelector((state) => state.notice.dismissed);
 
   const userProfile = data?.data;
   const user = session?.data?.user;
@@ -80,7 +79,7 @@ export default function HeaderClient({ siteLogo, siteName, notice }: IProps) {
             : 'relative bg-white shadow-sm border-b border-gray-200 ',
         )}
       >
-        {!dismissed && notice && (
+        {/* {!dismissed && notice && (
           <div className='py-1 bg-red-800 text-center text-white font-medium text-sm flex items-center justify-center gap-2'>
             <span>{notice}</span>
             <button
@@ -90,7 +89,7 @@ export default function HeaderClient({ siteLogo, siteName, notice }: IProps) {
               <X className='w-4 h-4' />
             </button>
           </div>
-        )}
+        )} */}
         <div className='container mx-auto px-4 lg:px-6'>
           <div className='flex items-center justify-between h-18 lg:h-20'>
             {/* Logo */}

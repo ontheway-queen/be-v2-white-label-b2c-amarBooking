@@ -59,9 +59,7 @@ export default async function Footer() {
         </div>
 
         <div className='mt-14 pt-6 border-t border-secondary-foreground/20 text-sm text-secondary-foreground/70 flex flex-col md:flex-row justify-between items-center gap-4'>
-          <div className='flex gap-4'>
-          
-          </div>
+          <div className='flex gap-4'></div>
           <Suspense fallback={''}>
             <FooterCopyRight />
           </Suspense>
