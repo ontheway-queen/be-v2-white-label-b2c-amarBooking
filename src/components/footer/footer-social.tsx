@@ -1,5 +1,6 @@
 import { getSiteInfo } from '@/lib/APIs/config-api';
 import { getImageLink } from '@/lib/helper';
+import { House } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -35,7 +36,10 @@ const FooterSocial = async (props: Props) => {
             {siteData.address.map((item, idx) => (
               <div key={idx}>
                 <p className='font-medium text-lg'>{item.title}</p>
-                <p className='text-sm'>{item.address}</p>
+                <p className='text-sm flex items-center'>
+                  <House className='inline-block mr-2 h-3 w-3' />
+                  {item.address}
+                </p>
               </div>
             ))}
           </div>

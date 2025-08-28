@@ -1,5 +1,6 @@
 import { getSiteInfo } from '@/lib/APIs/config-api';
 import { getImageLink } from '@/lib/helper';
+import { Mail, Phone } from 'lucide-react';
 import Image from 'next/image';
 
 type Props = {};
@@ -28,17 +29,30 @@ const FooterLogoInfo = async (props: Props) => {
         <div className='flex flex-col gap-1'>
           {siteData.emails.map((item, idx) => (
             <a key={idx} href={`mailto:${item.email}`} className='text-sm '>
+              <Mail className='inline-block mr-2 h-3 w-3' />
               {item.email}
             </a>
           ))}
         </div>
       )}
+      {/* Address */}
+      {/* {siteData?.address?.length && (
+        <div className='flex flex-col gap-1'>
+          {siteData.address.map((item, idx) => (
+            <a key={idx} href={`mailto:${item.address}`} className='text-sm '>
+              <Mail className='inline-block mr-1' />
+              {item.address}
+            </a>
+          ))}
+        </div>
+      )} */}
 
       {/* Phone Numbers */}
       {siteData?.numbers?.length && (
         <div className='flex flex-col gap-1'>
           {siteData.numbers.map((item, idx) => (
             <a key={idx} href={`tel:${item.number}`} className='text-sm '>
+              <Phone className='inline-block mr-2 w-3 h-3' />
               {item.number}
             </a>
           ))}

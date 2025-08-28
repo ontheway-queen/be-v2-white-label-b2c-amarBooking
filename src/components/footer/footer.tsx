@@ -59,14 +59,14 @@ export default async function Footer() {
         </div>
 
         <div className='mt-14 pt-6 border-t border-secondary-foreground/20 text-sm text-secondary-foreground/70 flex flex-col md:flex-row justify-between items-center gap-4'>
-          <div className='flex gap-4'>
+          {/* <div className='flex gap-4'>
             <Link href='/terms' className='hover:underline'>
               Terms & Conditions
             </Link>
             <Link href='/privacy' className='hover:underline'>
               Privacy Policy
             </Link>
-          </div>
+          </div> */}
           <Suspense fallback={''}>
             <FooterCopyRight />
           </Suspense>

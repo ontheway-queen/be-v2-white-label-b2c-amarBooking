@@ -19,6 +19,7 @@ export const CommonAPI = baseApi.injectEndpoints({
       },
 
       providesTags: ['AIRPORT_LIST'],
+      
     }),
 
     getFlightRules: builder.query<

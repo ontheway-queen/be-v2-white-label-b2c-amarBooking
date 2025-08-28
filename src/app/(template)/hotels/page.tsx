@@ -46,13 +46,13 @@ const HotelsPage = () => {
       <Suspense fallback={''}>
         <HotDeals />
       </Suspense>
-      <Suspense fallback={<PopularDestinationsSkeleton />}>
+      {/* <Suspense fallback={<PopularDestinationsSkeleton />}>
         <PopularDestination />
-      </Suspense>
+      </Suspense> */}
       <Features />
-      <Suspense>
+      {/* <Suspense>
         <TopDestination />
-      </Suspense>
+      </Suspense> */}
       <Suspense fallback={<AppDownloadLoading />}>
         <AppDownload />
       </Suspense>
