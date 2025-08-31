@@ -112,7 +112,7 @@ const DateSelect = ({ label, name, disabled, onSelect, selectedMonth }: Props) =
                       }
                     }}
                     disabled={disabled}
-                    month={selectedMonth ? selectedMonth : month}
+                    defaultMonth={selectedMonth ? selectedMonth : month}
                     onMonthChange={setMonth}
                     className='w-full'
                   />
