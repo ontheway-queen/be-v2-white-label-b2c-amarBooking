@@ -29,7 +29,7 @@ const VisaSearchBox = () => {
     startTransition(() => {
       if (data.country?.id) {
         router.push(
-          `/visa/list?id=${data.country?.id}&country=${data.country?.name}&passenger=${data.traveler}`,
+          `/visa/list?id=${data.country?.id}&country=${data.country?.name}&traveler=${data.traveler}`,
         );
       } else {
         router.push(`/visa/list?traveler=${data.traveler}`);
