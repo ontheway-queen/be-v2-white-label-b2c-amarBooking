@@ -25,7 +25,7 @@ export default async function Footer() {
   };
 
   return (
-    <footer className='footer-header text-secondary-foreground relative z-20'>
+    <footer className=' w-full bg-gradient-to-br from-gray-900 via-gray-800 to-black  overflow-hidden border-t-2 border-primary text-secondary-foreground relative z-20'>
       <section className='container px-4 md:mx-10 py-16'>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12'>
           <Suspense fallback={<FooterLogoInfoLoading />}>
